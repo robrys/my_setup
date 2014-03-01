@@ -5,14 +5,26 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="wedisagree"
 
 # ALIASES
-#alias mysql=/usr/local/mysql/bin/mysql
-#alias mysqladmin=/usr/local/mysql/bin/mysqladmin
-#alias apup='networksetup -setairportpower en0 on'
-#alias apdown='networksetup -setairportpower en0 off'
-#alias ls='ls -G'
-#alias ll='ls -l'
-#alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
-#alias ssh='ssh -R 52698:localhost:52698'
+alias rm='rm -i'
+alias co='sh $HOME/bin/rmate'
+alias gitInfo='ssh git@git.corp.appnexus.com info'
+alias diskspace='du -S | sort -n -r | more'
+alias adnxs='cd /usr/local/adnxs'
+alias maestroui='cd /usr/local/adnxs/maestro3-ui'
+alias maestroapi='cd /usr/local/adnxs/maestro3-api'
+alias tasker='cd /usr/local/adnxs/tasker-api'
+alias eos_rm='eos ps | grep $USER | awk '"'"'{ print $1 }'"'"' | while read inst ;  do eos kill -i $inst && eos rmc -i $inst; done'
+alias refresh='eval `ssh-agent`; ssh-add'
+
+function fawk {
+    first="awk '{print "
+    last="}'"
+    cmd="${first}\$${1}${last}"
+    eval $cmd
+}
+
+# Activate z command
+. $HOME/bin/z/z.sh
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -48,4 +60,4 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:$PATH:/usr/local/opt/ruby/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/Users/dtrujillo/.rvm/bin:/Users/dtrujillo/.rvm/bin:/Users/dtrujillo/bin
+export PATH=/usr/local/bin:$PATH:/usr/local/opt/ruby/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:$HOME/.rvm/bin:$HOME/bin
