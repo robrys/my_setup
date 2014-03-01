@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# githubog: http://ogp.me/ns/fb/githubog#">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>ssh-copy-rsub - allows you to easily copy the remote script to your server using the same syntax as ssh-copy-id</title>
+
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="rmIHhqYdH4p5jZ2+t4bLuA3uKD30qZ+F5DTVPfpa4gU=" name="csrf-token" />
+  <meta name="viewport" content="width=960">
+
+  <link type="text/plain" rel="author" href="https://github.com/humans.txt" />
+
+  <meta content="gist" name="octolytics-app-id" /><meta content="collector.githubapp.com" name="octolytics-host" />
+
+  <link href="/assets/application-f348fb986aecf8d3b65e959e23f6a29f.css" media="screen, print" rel="stylesheet" />
+  <script src="/assets/application-4fc558fd34d5f84950713717d772ea06.js"></script>
+
+    <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@github">
+  <meta property="og:title" content="leon/ssh-copy-rsub">
+  <meta property="og:type" content="githubog:gist">
+  <meta property="og:url" content="https://gist.github.com//leon/1957476">
+  <meta property="og:image" content="https://secure.gravatar.com/avatar/f9ccd98c185d7407c6d27e2875335a31?s=140&amp;d=https://github.com/images/gravatars/gravatar-140.png">
+  <meta property="og:site_name" content="GitHub Gists">
+  <meta property="og:description" content="ssh-copy-rsub - allows you to easily copy the remote script to your server using the same syntax as ssh-copy-id - Gist is a simple way to share snippets of text and code with others.">
+  <meta name="description" content="ssh-copy-rsub - allows you to easily copy the remote script to your server using the same syntax as ssh-copy-id - Gist is a simple way to share snippets of text and code with others.">
+
+</head>
+
+<body class=" ">
+
+  <div id="wrapper">
+    
+
+    <div id="header" class="header header-logged-out">
+      <div class="container" class="clearfix">
+        <a class="header-logo-wordmark" href="https://gist.github.com/">
+          <span class="octicon octicon-logo-github"></span>
+          <span class="octicon-logo octicon-logo-gist"></span>
+        </a>
+
+        <div class="header-actions">
+          <a class="button primary" href="https://github.com/signup?return_to=gist">Sign up for a GitHub Account</a>
+          <a class="button" href="https://gist.github.com/login?return_to=/leon/1957476" data-skip-pjax>Sign in</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-content" id="js-pjax-container" data-pjax-container>
+      <div class=" site-container js-site-container" data-url="/leon/1957476">
+  
+  <meta content="true" name="octolytics-dimension-public" /><meta content="1957476" name="octolytics-dimension-gist_id" /><meta content="1957476" name="octolytics-dimension-gist_name" /><meta content="false" name="octolytics-dimension-anonymous" /><meta content="13211" name="octolytics-dimension-owner_id" /><meta content="leon" name="octolytics-dimension-owner_login" /><meta content="false" name="octolytics-dimension-forked" />
+
+<div class="pagehead repohead">
+  <div class="container">
+    <div class="title-actions-bar">
+      <ul class="pagehead-actions">
+      </ul>
+      <h1 itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public">
+        <span class="repo-label"><span>public</span></span>
+        <span class="mega-octicon octicon-gist" ></span>
+        <div class="meta">
+          <div class="gist-author">
+            <img src="https://secure.gravatar.com/avatar/f9ccd98c185d7407c6d27e2875335a31?s=140&amp;d=https://github.com/images/gravatars/gravatar-140.png" width="26" height="26">
+            <span class="author vcard">
+                <span itemprop="title"><a href="/leon">leon</a></span>
+            </span> /
+            <strong><a href="/leon/1957476" class="js-current-repository">ssh-copy-rsub</a></strong>
+          </div>
+          <div class="gist-timestamp">
+              <span class="datetime">Last active <time class="js-relative-date" title="2013-07-29T20:49:39Z" datetime="2013-07-29T20:49:39Z">2013-07-29</time></span>
+          </div>
+      </h1>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div class="gist-description container">
+  <p>ssh-copy-rsub - allows you to easily copy the remote script to your server using the same syntax as ssh-copy-id</p>
+</div>
+
+<div class="gist container js-gist-container" data-version="a1289aa4bd78079114ed4394a6154f6aecea7644">
+    <div class="root-pane">
+  <div class="menu-container">
+    <ul class="menu gisttabs">
+      <li>
+        <a href="/leon/1957476" class="selected">
+          Gist Detail
+        </a>
+      </li>
+
+        <li class="revision-count">
+          <a href="/leon/1957476/revisions" >
+            Revisions
+            <span class="counter">6</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="/leon/1957476/stars" >
+            Stars
+            <span class="counter">3</span>
+          </a>
+        </li>
+
+    </ul>
+  </div>
+
+  <ul class="export-references">
+    <li>
+      <a href="/leon/1957476/download" class="minibutton" data-skip-pjax="true" rel="nofollow"><span class="octicon octicon-cloud-download"></span>Download Gist</a>
+    </li>
+    <li>
+      <label for="url-field"><strong>Clone</strong> this gist</label>
+      <input type="text" readonly spellcheck="false" class="url-field js-url-field js-cptoggle" name="url-field" value="https://gist.github.com/1957476.git" data-cptoggle-display="/leon/1957476">
+    </li>
+    <li>
+      <label for="embed-field"><strong>Embed</strong> this gist</label>
+      <input type="text" readonly spellcheck="false" class="url-field js-url-field" name="embed-field" value="&lt;script src=&quot;https://gist.github.com/leon/1957476.js&quot;&gt;&lt;/script&gt;">
+    </li>
+    <li>
+      <label for="link-field"><strong>Link to</strong> this gist</label>
+      <input type="text" readonly spellcheck="false" class="url-field js-url-field" name="link-field" value="https://gist.github.com/leon/1957476">
+    </li>
+  </ul>
+</div>
+
+
+  <div class="column files">
+        <div id="file-ssh-copy-rsub" class="bubble">
+          <div class="file-box ">
+            <div class="meta">
+              <div class="file-info">
+                <span class="file-type-icon"><span class="octicon octicon-gist"></span></span>
+                <strong class="file-name js-selectable-text">ssh-copy-rsub</strong>
+              </div>
+              <div class="file-actions">
+                <span class="file-language">Shell</span>
+                <ul class="button-group">
+                  <li><a title="Permalink" href="#file-ssh-copy-rsub" class="file-actions-button tooltipped downwards permalink"><span class="octicon octicon-link"></span></a></li>
+                  <li><a title="View Raw" href="/leon/1957476/raw/d461ec59065d570be1c60454ae4bbce110f737e0/ssh-copy-rsub" data-skip-pjax class="file-actions-button tooltipped downwards raw-url"><span class="octicon octicon-code"></span></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="suppressed">
+              <a class="js-show-suppressed-file">File suppressed. Click to show.</a>
+            </div>
+            
+
+
+
+    <div class="file-data">
+      <table cellpadding="0" cellspacing="0" class="lines highlight">
+        <tr>
+          <td class="line-numbers">
+            <span class="line-number" id="file-ssh-copy-rsub-L1" rel="file-ssh-copy-rsub-L1">1</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L2" rel="file-ssh-copy-rsub-L2">2</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L3" rel="file-ssh-copy-rsub-L3">3</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L4" rel="file-ssh-copy-rsub-L4">4</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L5" rel="file-ssh-copy-rsub-L5">5</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L6" rel="file-ssh-copy-rsub-L6">6</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L7" rel="file-ssh-copy-rsub-L7">7</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L8" rel="file-ssh-copy-rsub-L8">8</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L9" rel="file-ssh-copy-rsub-L9">9</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L10" rel="file-ssh-copy-rsub-L10">10</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L11" rel="file-ssh-copy-rsub-L11">11</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L12" rel="file-ssh-copy-rsub-L12">12</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L13" rel="file-ssh-copy-rsub-L13">13</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L14" rel="file-ssh-copy-rsub-L14">14</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L15" rel="file-ssh-copy-rsub-L15">15</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L16" rel="file-ssh-copy-rsub-L16">16</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L17" rel="file-ssh-copy-rsub-L17">17</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L18" rel="file-ssh-copy-rsub-L18">18</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L19" rel="file-ssh-copy-rsub-L19">19</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L20" rel="file-ssh-copy-rsub-L20">20</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L21" rel="file-ssh-copy-rsub-L21">21</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L22" rel="file-ssh-copy-rsub-L22">22</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L23" rel="file-ssh-copy-rsub-L23">23</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L24" rel="file-ssh-copy-rsub-L24">24</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L25" rel="file-ssh-copy-rsub-L25">25</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L26" rel="file-ssh-copy-rsub-L26">26</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L27" rel="file-ssh-copy-rsub-L27">27</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L28" rel="file-ssh-copy-rsub-L28">28</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L29" rel="file-ssh-copy-rsub-L29">29</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L30" rel="file-ssh-copy-rsub-L30">30</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L31" rel="file-ssh-copy-rsub-L31">31</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L32" rel="file-ssh-copy-rsub-L32">32</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L33" rel="file-ssh-copy-rsub-L33">33</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L34" rel="file-ssh-copy-rsub-L34">34</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L35" rel="file-ssh-copy-rsub-L35">35</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L36" rel="file-ssh-copy-rsub-L36">36</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L37" rel="file-ssh-copy-rsub-L37">37</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L38" rel="file-ssh-copy-rsub-L38">38</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L39" rel="file-ssh-copy-rsub-L39">39</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L40" rel="file-ssh-copy-rsub-L40">40</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L41" rel="file-ssh-copy-rsub-L41">41</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L42" rel="file-ssh-copy-rsub-L42">42</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L43" rel="file-ssh-copy-rsub-L43">43</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L44" rel="file-ssh-copy-rsub-L44">44</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L45" rel="file-ssh-copy-rsub-L45">45</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L46" rel="file-ssh-copy-rsub-L46">46</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L47" rel="file-ssh-copy-rsub-L47">47</span>
+            <span class="line-number" id="file-ssh-copy-rsub-L48" rel="file-ssh-copy-rsub-L48">48</span>
+          </td>
+          <td class="line-data">
+            <pre class="line-pre"><div class="line" id="file-ssh-copy-rsub-LC1"><span class="c">#!/bin/sh -e</span></div><div class="line" id="file-ssh-copy-rsub-LC2"><span class="c">#</span></div><div class="line" id="file-ssh-copy-rsub-LC3"><span class="c"># Usage: ssh-copy-rsub [--bash] [user@]machine</span></div><div class="line" id="file-ssh-copy-rsub-LC4"><span class="c">#</span></div><div class="line" id="file-ssh-copy-rsub-LC5"><span class="c"># Shell script to install rsub on the remove server so we can open shell scripts locally.</span></div><div class="line" id="file-ssh-copy-rsub-LC6"><span class="c"># Author: Leon Radley (http://github.com/leon)</span></div><div class="line" id="file-ssh-copy-rsub-LC7">&nbsp;</div><div class="line" id="file-ssh-copy-rsub-LC8"><span class="nv">URL</span><span class="o">=</span><span class="s2">&quot;https://raw.github.com/avian/rmate/master/rmate&quot;</span></div><div class="line" id="file-ssh-copy-rsub-LC9">&nbsp;</div><div class="line" id="file-ssh-copy-rsub-LC10"><span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;$#&quot;</span> -gt 1 <span class="o">]</span> <span class="o">||</span> <span class="o">[</span> <span class="s2">&quot;$1&quot;</span> <span class="o">=</span> <span class="s2">&quot;-b&quot;</span> <span class="o">]</span> <span class="o">||</span> <span class="o">[</span> <span class="s2">&quot;$1&quot;</span> <span class="o">=</span> <span class="s2">&quot;--bash&quot;</span> <span class="o">]</span>; <span class="k">then</span></div><div class="line" id="file-ssh-copy-rsub-LC11"><span class="k">	</span><span class="nb">shift</span></div><div class="line" id="file-ssh-copy-rsub-LC12"><span class="nb">	</span><span class="nv">URL</span><span class="o">=</span><span class="s2">&quot;https://raw.github.com/aurora/rmate/master/rmate&quot;</span></div><div class="line" id="file-ssh-copy-rsub-LC13"><span class="k">fi</span></div><div class="line" id="file-ssh-copy-rsub-LC14">&nbsp;</div><div class="line" id="file-ssh-copy-rsub-LC15"><span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;$#&quot;</span> -lt 1 <span class="o">]</span> <span class="o">||</span> <span class="o">[</span> <span class="s2">&quot;$1&quot;</span> <span class="o">=</span> <span class="s2">&quot;-h&quot;</span> <span class="o">]</span> <span class="o">||</span> <span class="o">[</span> <span class="s2">&quot;$1&quot;</span> <span class="o">=</span> <span class="s2">&quot;--help&quot;</span> <span class="o">]</span>; <span class="k">then</span></div><div class="line" id="file-ssh-copy-rsub-LC16">&nbsp;</div><div class="line" id="file-ssh-copy-rsub-LC17">cat <span class="s">&lt;&lt;EOF</span></div><div class="line" id="file-ssh-copy-rsub-LC18"><span class="s">Usage: $0 [--bash] [user@]machine</span></div><div class="line" id="file-ssh-copy-rsub-LC19">&nbsp;</div><div class="line" id="file-ssh-copy-rsub-LC20"><span class="s"># Install Sublime Text plugin</span></div><div class="line" id="file-ssh-copy-rsub-LC21"><span class="s">https://github.com/Drarok/rsub</span></div><div class="line" id="file-ssh-copy-rsub-LC22">&nbsp;</div><div class="line" id="file-ssh-copy-rsub-LC23"><span class="s"># Setup ssh for easy access</span></div><div class="line" id="file-ssh-copy-rsub-LC24"><span class="s">edit ~/.ssh/config</span></div><div class="line" id="file-ssh-copy-rsub-LC25">&nbsp;</div><div class="line" id="file-ssh-copy-rsub-LC26"><span class="s"># The automatic forwarding</span></div><div class="line" id="file-ssh-copy-rsub-LC27"><span class="s">RemoteForward 52698 localhost:52698</span></div><div class="line" id="file-ssh-copy-rsub-LC28">&nbsp;</div><div class="line" id="file-ssh-copy-rsub-LC29"><span class="s"># Standard user, so you can do ssh servername instead of root@servername</span></div><div class="line" id="file-ssh-copy-rsub-LC30"><span class="s">User root</span></div><div class="line" id="file-ssh-copy-rsub-LC31">&nbsp;</div><div class="line" id="file-ssh-copy-rsub-LC32"><span class="s"># Custom aliases</span></div><div class="line" id="file-ssh-copy-rsub-LC33"><span class="s">Host myalias</span></div><div class="line" id="file-ssh-copy-rsub-LC34"><span class="s">  HostName myserver.mydomain.com</span></div><div class="line" id="file-ssh-copy-rsub-LC35"><span class="s">  User myuser</span></div><div class="line" id="file-ssh-copy-rsub-LC36">&nbsp;</div><div class="line" id="file-ssh-copy-rsub-LC37"><span class="s">EOF</span></div><div class="line" id="file-ssh-copy-rsub-LC38"><span class="nb">exit </span>1</div><div class="line" id="file-ssh-copy-rsub-LC39"><span class="k">fi</span></div><div class="line" id="file-ssh-copy-rsub-LC40">&nbsp;</div><div class="line" id="file-ssh-copy-rsub-LC41">wget --quiet -O - <span class="s2">&quot;${URL}&quot;</span> | ssh <span class="k">${</span><span class="nv">1</span><span class="p">%:</span><span class="k">}</span> <span class="s1">&#39;umask 077; test -d /usr/local/bin || mkdir -p /usr/local/bin; cat &gt; /usr/local/bin/rsub; chmod a+rx /usr/local/bin/rsub&#39;</span> <span class="o">||</span> <span class="nb">exit </span>1</div><div class="line" id="file-ssh-copy-rsub-LC42">&nbsp;</div><div class="line" id="file-ssh-copy-rsub-LC43">cat <span class="s">&lt;&lt;EOF</span></div><div class="line" id="file-ssh-copy-rsub-LC44">&nbsp;</div><div class="line" id="file-ssh-copy-rsub-LC45"><span class="s">Installation complete!</span></div><div class="line" id="file-ssh-copy-rsub-LC46"><span class="s">For more information run $0 --help</span></div><div class="line" id="file-ssh-copy-rsub-LC47">&nbsp;</div><div class="line" id="file-ssh-copy-rsub-LC48"><span class="s">EOF</span></div></pre>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+          </div>
+        </div>
+    <div id="comments" class="new-comments">
+      
+<div class="discussion-bubble js-comment-container">
+  <img class="discussion-bubble-avatar" width="48" height="48" src="https://secure.gravatar.com/avatar/7053425c0d18b33acc9d6d9818a387b1?s=140&amp;d=https://github.com/images/gravatars/gravatar-140.png">
+  <div class="discussion-bubble-content bubble">
+    <div class="discussion-bubble-inner">
+
+      <div class="comment js-comment " id="comment-337179">
+        <div class="comment-header normal-comment-header">
+          <a href="#" class="comment-type-icon octicon octicon-comment"></a>
+          <a href="/shaneog" class="comment-header-author">shaneog</a>
+          <span class="comment-header-action-text">
+            <span id="gistcomment-337179">
+              <a href="/leon/1957476/#comment-337179">commented</a></span>
+          </span>
+          <span class="comment-header-right">
+            <span id="gistcomment-337179">
+              <a href="/leon/1957476/#comment-337179" class="comment-header-date">
+                <time class="js-relative-date" title="2012-05-31T12:53:01Z" datetime="2012-05-31T12:53:01Z">2012-05-31</time>
+              </a>
+            </span>
+          </span>
+        </div>
+
+
+        <div class="comment-content">
+          <div class="edit-comment-hide">
+            <!-- <div class="comment-form-error">There has been an error</div> -->
+            <div class="comment-body markdown-body markdown-format js-comment-body">
+                <p><code>https://raw.github.com/aurora/rmate/master/rmate.sh</code> should now be <code>https://raw.github.com/aurora/rmate/master/rmate</code></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="discussion-bubble js-comment-container">
+  <img class="discussion-bubble-avatar" width="48" height="48" src="https://secure.gravatar.com/avatar/f9ccd98c185d7407c6d27e2875335a31?s=140&amp;d=https://github.com/images/gravatars/gravatar-140.png">
+  <div class="discussion-bubble-content bubble">
+    <div class="discussion-bubble-inner">
+
+      <div class="comment js-comment " id="comment-337182">
+        <div class="comment-header normal-comment-header">
+          <a href="#" class="comment-type-icon octicon octicon-comment"></a>
+          <a href="/leon" class="comment-header-author">leon</a>
+          <span class="comment-header-action-text">
+            <span id="gistcomment-337182">
+              <a href="/leon/1957476/#comment-337182">commented</a></span>
+          </span>
+          <span class="comment-header-right">
+            <span id="gistcomment-337182">
+              <a href="/leon/1957476/#comment-337182" class="comment-header-date">
+                <time class="js-relative-date" title="2012-05-31T12:55:25Z" datetime="2012-05-31T12:55:25Z">2012-05-31</time>
+              </a>
+            </span>
+          </span>
+        </div>
+
+
+        <div class="comment-content">
+          <div class="edit-comment-hide">
+            <!-- <div class="comment-form-error">There has been an error</div> -->
+            <div class="comment-body markdown-body markdown-format js-comment-body">
+                <p>Thanks! I've updated the gist :)</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="discussion-bubble js-comment-container">
+  <img class="discussion-bubble-avatar" width="48" height="48" src="https://secure.gravatar.com/avatar/e9e409ecf5d0650e6a987a174444795b?s=140&amp;d=https://github.com/images/gravatars/gravatar-140.png">
+  <div class="discussion-bubble-content bubble">
+    <div class="discussion-bubble-inner">
+
+      <div class="comment js-comment " id="comment-830615">
+        <div class="comment-header normal-comment-header">
+          <a href="#" class="comment-type-icon octicon octicon-comment"></a>
+          <a href="/jeffbyrnes" class="comment-header-author">jeffbyrnes</a>
+          <span class="comment-header-action-text">
+            <span id="gistcomment-830615">
+              <a href="/leon/1957476/#comment-830615">commented</a></span>
+          </span>
+          <span class="comment-header-right">
+            <span id="gistcomment-830615">
+              <a href="/leon/1957476/#comment-830615" class="comment-header-date">
+                <time class="js-relative-date" title="2013-05-15T13:12:28Z" datetime="2013-05-15T13:12:28Z">2013-05-15</time>
+              </a>
+            </span>
+          </span>
+        </div>
+
+
+        <div class="comment-content">
+          <div class="edit-comment-hide">
+            <!-- <div class="comment-form-error">There has been an error</div> -->
+            <div class="comment-body markdown-body markdown-format js-comment-body">
+                <p>FYI, the URL for the Ruby version has changed; it's now a gem, but it could still be installed directly from <a href="https://raw.github.com/textmate/rmate/master/bin/rmate">https://raw.github.com/textmate/rmate/master/bin/rmate</a>.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="discussion-bubble js-comment-container">
+  <img class="discussion-bubble-avatar" width="48" height="48" src="https://secure.gravatar.com/avatar/8b13b2a44c953a961f03d65ed712b4b9?s=140&amp;d=https://github.com/images/gravatars/gravatar-140.png">
+  <div class="discussion-bubble-content bubble">
+    <div class="discussion-bubble-inner">
+
+      <div class="comment js-comment " id="comment-876587">
+        <div class="comment-header normal-comment-header">
+          <a href="#" class="comment-type-icon octicon octicon-comment"></a>
+          <a href="/simondahla" class="comment-header-author">simondahla</a>
+          <span class="comment-header-action-text">
+            <span id="gistcomment-876587">
+              <a href="/leon/1957476/#comment-876587">commented</a></span>
+          </span>
+          <span class="comment-header-right">
+            <span id="gistcomment-876587">
+              <a href="/leon/1957476/#comment-876587" class="comment-header-date">
+                <time class="js-relative-date" title="2013-07-29T20:49:39Z" datetime="2013-07-29T20:49:39Z">2013-07-29</time>
+              </a>
+            </span>
+          </span>
+        </div>
+
+
+        <div class="comment-content">
+          <div class="edit-comment-hide">
+            <!-- <div class="comment-form-error">There has been an error</div> -->
+            <div class="comment-body markdown-body markdown-format js-comment-body">
+                <p>Don't forget to set the premissions to get it working</p>
+
+<div class="highlight"><pre>sudo chmod 755 /usr/local/bin/ssh-copy-rsub 
+</pre></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    </div>
+      <p class="uncommentable"><span class="octicon octicon-alert"></span> Please <a href="/login?return_to=/leon/1957476" rel="nofollow">sign in</a> to comment on this gist.</p>
+  </div>
+</div>
+
+  <div class="context-overlay"></div>
+</div>
+
+    </div>
+    <div class="slow-loading-overlay"></div>
+  </div>
+
+  <div id="ajax-error-message" class="flash flash-error">
+    <div class="container">
+      <span class="octicon octicon-alert"></span>
+      Something went wrong with that request. Please try again.
+      <a href="#" class="octicon octicon-remove-close ajax-error-dismiss"></a>
+    </div>
+  </div>
+
+  <footer>
+    <div id="footer">
+  <div class="container clearfix">
+
+    <!-- Served fresh by github-fe103-cp1-prd.iad.github.net -->
+    <p class="right">&copy; 2013 GitHub Inc. All rights reserved.</p>
+    <a class="left" href="/">
+      <span class="mega-octicon octicon-mark-github"></span>
+    </a>
+    <ul id="legal">
+      <li><a href="https://github.com/blog">The GitHub Blog</a></li>
+      <li><a href="mailto:support@github.com">Support</a></li>
+      <li><a href="https://github.com/contact">Contact</a></li>
+    </ul>
+
+  </div><!-- /.container -->
+</div><!-- /.#footer -->
+
+  </footer>
+
+</body>
+</html>

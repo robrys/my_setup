@@ -1,0 +1,22 @@
+[user]
+	email = dtrujillo@appnexus.com
+	name = Dan Trujillo
+[alias]
+    st = status -s
+    co = checkout
+    cb = checkout -b
+    br = branch
+    last = log -1 HEAD
+    ci = commit -m
+    cia = commit -am
+    lc = log ORIG_HEAD.. --stat --no-merges
+    pushoh = push origin HEAD
+    ls = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    dlc = diff --cached HEAD^
+    gr = remote show origin
+    sr =!git branch --set-upstream `git rev-parse --abbrev-ref HEAD` origin/`git rev-parse --abbrev-ref HEAD`
+    nuke = !sh -c 'git branch -d $1 && git push origin :$1' -
+    fnuke = !sh -c 'git branch -D $1 && git push origin :$1' -
+[core]
+	editor = vim

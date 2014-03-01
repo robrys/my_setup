@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# git-recent
+#
+# Call 'git fetch' and log all remote branches that have any activity
+# in the past n days (default=3).
+#
+# Place this script in your PATH, chmod +x it, and git will allow you to magically do:
+# $ git recent (days)
+#
+# Note: in order for this to work you must name the file "git-recent" without
+# an extension.
+#
+# Author: devops@appnexus.com
+# Last modified: 21 January 2014
+
+if [[ -z "$1" ]]
+then
+  days=3
+else
+  days=$1
+fi
+
+FORMAT='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+LOG_PARAMS=("--pretty=format:$FORMAT" "--abbrev-commit" "--date=relative" "--since=$days.days")
+
+git fetch
+PRINT_BREAK=0
+for b in $(git branch -r | grep -v HEAD | awk '{print $1}'); do
+  output=$(git log "${LOG_PARAMS[@]}" $b)
+  if [[ -n $output ]]
+  then
+    if [[ $PRINT_BREAK -eq 1 ]]
+    then
+      echo
+    else
+      PRINT_BREAK=1
+    fi
+    echo "Branch: $b"
+    echo "$output"
+  fi
+done

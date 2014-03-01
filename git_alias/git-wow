@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# git-who-owns-what
+#
+# Requires: git-remote-authors: https://gist.github.com/jhuttner/8795653
+#
+# Print the branches that each user was the last committer for.
+#
+# Place this script in your PATH, chmod +x it, and git will allow you to magically do:
+# $ git who-owns-what
+#
+# Author: devops@appnexus.com
+# Last modified: 3 February 2014
+
+#!/bin/bash
+
+names=\
+"First1 Last1
+First2 Last2
+First3 Last3"
+
+while read i; do echo --- $i; git remote-authors 1 | grep -B1 "$i" | grep Branch; done < <(echo -e "$names")
+
