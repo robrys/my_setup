@@ -28,7 +28,7 @@ function fawk {
 
 # Setting PATH for Python 2.7 AND Ruby
 # The orginal version is saved in .bash_profile.pysave
-PATH="/Users/dtrujillo/Python-2.7.3:/Users/dtrujillo/bin:/usr/local/opt/ruby/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:$HOME/bin:$HOME:${PATH}"
+PATH="/Users/dtrujillo/Python-2.7.3:/Users/dtrujillo/bin:/usr/local/opt/ruby/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:$HOME/bin:$HOME/git_alias:$HOME:${PATH}"
 export PATH
 
 # Setting for the new UTF-8 terminal support in Lion
