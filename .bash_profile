@@ -1,36 +1,5 @@
 #!/usr/bin/env bash
 
-lowercase(){
-    echo "$1" | sed "y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/"
-}
-
-# Detect OS
-OS=`lowercase \`uname\``
-if [ "$OS" = "darwin" ]; then
-    OS="linx"
-else
-    OS="mac"
-fi
-
-#ALIASES
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias ll='ls -hal'
-alias rm='rm -i'
-alias diskspace='du -S | sort -n -r | more'
-if [ "$OS" = "linux" ]; then
-    alias co='sh $HOME/bin/rmate'
-    alias gitInfo='ssh git@git.corp.appnexus.com info'
-    alias adnxs='cd /usr/local/adnxs'
-    alias maestroui='cd /usr/local/adnxs/maestro3-ui'
-    alias maestroapi='cd /usr/local/adnxs/maestro3-api'
-    alias tasker='cd /usr/local/adnxs/tasker-api'
-    alias eos_rm='eos ps | grep $USER | awk '"'"'{ print $1 }'"'"' | while read inst ;  do eos kill -i $inst && eos rmc -i $inst; done'
-    alias refresh='eval `ssh-agent`; ssh-add'
-fi
-
 # Finding things
 function findin () {
     find . -exec grep -q "$1" '{}' \; -print
@@ -67,6 +36,37 @@ function fawk {
     eval $cmd
 }
 
+# Make things lowercase
+lowercase(){
+    echo "$1" | sed "y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/"
+}
+
+# Detect OS
+OS=`lowercase \`uname\``
+if [ "$OS" = "darwin" ]; then
+    OS="linx"
+else
+    OS="mac"
+fi
+
+#ALIASES
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ll='ls -hal'
+alias rm='rm -i'
+alias diskspace='du -S | sort -n -r | more'
+if [ "$OS" = "linux" ]; then
+    alias co='sh $HOME/bin/rmate'
+    alias gitInfo='ssh git@git.corp.appnexus.com info'
+    alias adnxs='cd /usr/local/adnxs'
+    alias maestroui='cd /usr/local/adnxs/maestro3-ui'
+    alias maestroapi='cd /usr/local/adnxs/maestro3-api'
+    alias tasker='cd /usr/local/adnxs/tasker-api'
+    alias eos_rm='eos ps | grep $USER | awk '"'"'{ print $1 }'"'"' | while read inst ;  do eos kill -i $inst && eos rmc -i $inst; done'
+    alias refresh='eval `ssh-agent`; ssh-add'
+fi
 
 # Activate z command
 . $HOME/bin/z/z.sh
