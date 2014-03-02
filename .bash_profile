@@ -1,9 +1,15 @@
+#!/usr/bin/env bash
+
+lowercase(){
+    echo "$1" | sed "y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/"
+}
+
 # Detect OS
 OS=`lowercase \`uname\``
-if [ $OS == "darwin" ]; then
-  OS="mac"
+if [ "$OS" = "darwin" ]; then
+    OS="linx"
 else
-  OS="linux"
+    OS="mac"
 fi
 
 #ALIASES
@@ -14,7 +20,7 @@ alias .....="cd ../../../.."
 alias ll='ls -hal'
 alias rm='rm -i'
 alias diskspace='du -S | sort -n -r | more'
-if [ "$OS" = "linux"]; then
+if [ "$OS" = "linux" ]; then
     alias co='sh $HOME/bin/rmate'
     alias gitInfo='ssh git@git.corp.appnexus.com info'
     alias adnxs='cd /usr/local/adnxs'
@@ -27,30 +33,30 @@ fi
 
 # Finding things
 function findin () {
-  find . -exec grep -q "$1" '{}' \; -print
+    find . -exec grep -q "$1" '{}' \; -print
 }
 
 # Extracting files
 extract () {
-  if [ -f $1 ] ; then
-    case $1 in
-      *.tar.bz2)   tar xvjf $1    ;;
-      *.tar.gz)    tar xvzf $1    ;;
-      *.tgz)       tar xvzf $1    ;;
-      *.bz2)       bunzip2 $1     ;;
-      *.rar)       unrar x $1     ;;
-      *.gz)        gunzip $1      ;;
-      *.tar)       tar xvf $1     ;;
-      *.tbz2)      tar xvjf $1    ;;
-      *.tgz)       tar xvzf $1    ;;
-      *.zip)       unzip $1       ;;
-      *.Z)         uncompress $1  ;;
-      *.7z)        7z x $1        ;;
-      *)           echo "'$1' cannot be extracted via >extract<" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)   tar xvjf $1    ;;
+            *.tar.gz)    tar xvzf $1    ;;
+            *.tgz)       tar xvzf $1    ;;
+            *.bz2)       bunzip2 $1     ;;
+            *.rar)       unrar x $1     ;;
+            *.gz)        gunzip $1      ;;
+            *.tar)       tar xvf $1     ;;
+            *.tbz2)      tar xvjf $1    ;;
+            *.tgz)       tar xvzf $1    ;;
+            *.zip)       unzip $1       ;;
+            *.Z)         uncompress $1  ;;
+            *.7z)        7z x $1        ;;
+            *)           echo "'$1' cannot be extracted via >extract<" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
 }
 
 # Print specific column
@@ -66,9 +72,9 @@ function fawk {
 . $HOME/bin/z/z.sh
 
 # Exposing editor for things
-export EDITOR = 'vim'
-if [ $OS != "mac" ]; then
-  alias vi="vim"
+export EDITOR='vim'
+if [ $OS = "linux" ]; then
+    alias vi="vim"
 fi
 
 # Setting PATH for Python 2.7 AND Ruby
@@ -90,7 +96,7 @@ export HISTCONTROL=ignoredups
 # Append to the history file, don't overwrite it. This will cause some
 # duplicates, even with the setting above since t a new history setting is
 # saved with each session.
-shopt -s histappend
+#shopt -s histappend
 
 # Large command history file
 HISTFILESIZE=1000000
@@ -107,12 +113,14 @@ if [ -f $HOME/.bashrc ]; then
    source $HOME/.bashrc
 fi
 
-# Setting up PROMPT
-source /etc/bash_completion.d/git
+if [ $OS = "linux" ]; then
+    # Setting up PROMPT
+    source $HOME/bin/git-prompt.sh
 
-# Note these first four lines are optional
-export GIT_PS1_SHOWCOLORHINTS=true
-export GIT_PS1_SHOWDIRTYSTATE=true
-export GIT_PS1_SHOWUNTRACKEDFILES=true
-export GIT_PS1_SHOWUPSTREAM="verbose"
-export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]$(__git_ps1 "\[\033[01;33m\](%s)\[\033[00m\]")$ '
+    # Note these first four lines are optional
+    export GIT_PS1_SHOWCOLORHINTS=true
+    export GIT_PS1_SHOWDIRTYSTATE=true
+    export GIT_PS1_SHOWUNTRACKEDFILES=true
+    export GIT_PS1_SHOWUPSTREAM="verbose"
+    export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]$(__git_ps1 "\[\033[01;33m\](%s)\[\033[00m\]")$ '
+fi
