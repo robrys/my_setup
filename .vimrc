@@ -50,6 +50,10 @@ let g:ctrlp_follow_symlinks = 1
 
 " Syntax Highlighting
 syntax on
+if has('gui_running')
+    set background=dark
+    colorscheme solarized
+endif
 
 " Easy viewing of multiple files? Why not!
 set hidden
