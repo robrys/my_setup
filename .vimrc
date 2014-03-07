@@ -59,6 +59,9 @@ let g:ctrlp_extensions = [
    \ 'ctrlp-filetpe',
    \ ]
 let g:ctrlp_follow_symlinks = 1
+nmap ; :CtrlPBuffer<CR>
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_match_window_reversed = 0
 
 " Syntax Highlighting
 syntax on
