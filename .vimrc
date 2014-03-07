@@ -1,10 +1,19 @@
 " Never hit escape again!
 imap jk <Esc>:w<CR>
 
+" Use 256 colors!
+set t_Co=256
+
+" utf-8 encoding baby!
+set encoding=utf-8
+
+" OMG it's powerline!
+let g:Powerline_symbols = 'fancy'
+
 " Make sure I can spell
 " set spell spelllang=en_us
 
-" Go hard or go hom
+" Go hard or go home
 " autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 " Bye, bye arrow keys
@@ -31,6 +40,9 @@ let g:syntastic_warning_symbol = '⚠'
 " Checkers
 let g:syntastic_python_checkers=['pyflakes']
 let g:syntastic_json_checkers=['jsonlint']
+
+" NERDtree things
+nmap <C-l> :NERDTreeToggle<CR>
 
 "Ctrl-p Stuff
 set runtimepath^=~/.vim/bundle/ctrlp.vim
