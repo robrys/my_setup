@@ -8,7 +8,8 @@ set t_Co=256
 set encoding=utf-8
 
 " OMG it's powerline!
-let g:Powerline_symbols = 'fancy'
+"let g:Powerline_symbols = 'fancy'
+let g:Powerline_theme = 'long'
 
 " Make sure I can spell
 " set spell spelllang=en_us
