@@ -1,0 +1,12 @@
+[submodule "bin/git-cal"]
+	path = bin/git-cal
+	url = https://github.com/k4rthik/git-cal.git
+[submodule "bin/hop"]
+	path = bin/hop
+	url = https://github.com/Cue/hop.git
+[submodule "bin/pastie"]
+	path = bin/pastie
+	url = https://github.com/jhuttner/pastie.git
+[submodule "bin/z"]
+	path = bin/z
+	url = https://github.com/rupa/z.git
