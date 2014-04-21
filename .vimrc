@@ -47,10 +47,10 @@ nmap <C-l> :NERDTreeToggle<CR>
 
 "Ctrl-p Stuff
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-:helptags ~/.vim/bundle/ctrlp.vim/doc
-let g:ctrlp_working_path_mode = 2          " CtrlP: use the nearest ancestor that contains one of these directories or files: .git/ .hg/ .svn/ .bzr/ _darcs/
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip   " MacOSX/Linux
 " set wildignore+=tmp\*,*.swp,*.zip,*.exe    " Windows
+:helptags ~/.vim/bundle/ctrlp.vim/doc
+let g:ctrlp_working_path_mode = 2          " CtrlP: use the nearest ancestor that contains one of these directories or files: .git/ .hg/ .svn/ .bzr/ _darcs/
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\.git$\|\.hg$\|\.svn$\|node_modules',
     \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\|\.DS_Store',
@@ -60,9 +60,10 @@ let g:ctrlp_extensions = [
    \ 'ctrlp-filetpe',
    \ ]
 let g:ctrlp_follow_symlinks = 1
-nmap ; :CtrlPBuffer<CR>
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
+nmap ; :CtrlPBuffer<CR>
+nnoremap <leader>. :CtrlPTag<cr>
 
 " Syntax Highlighting
 syntax on
