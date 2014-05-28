@@ -9,7 +9,11 @@ set encoding=utf-8
 
 " OMG it's powerline!
 "let g:Powerline_symbols = 'fancy'
-let g:Powerline_theme = 'long'
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+let g:airline_theme = 'powerlineish'
 
 " Make sure I can spell
 " set spell spelllang=en_us
