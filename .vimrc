@@ -157,3 +157,43 @@ set noerrorbells
 set colorcolumn=100
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "match OverLength /\%81v.\+/
+
+" Rainbow parentheses colors.
+" Left column is for terminal environment.
+" Right column is for GUI environment.
+" Outermost is determined by last.
+let g:rbpt_colorpairs = [
+    \ ['blue',       '#FF6000'],
+    \ ['cyan', '#00FFFF'],
+    \ ['darkmagenta',    '#CC00FF'],
+    \ ['yellow',   '#FFFF00'],
+    \ ['red',     '#FF0000'],
+    \ ['darkgreen',    '#00FF00'],
+    \ ['White',         '#c0c0c0'],
+    \ ['blue',       '#FF6000'],
+    \ ['cyan', '#00FFFF'],
+    \ ['darkmagenta',    '#CC00FF'],
+    \ ['yellow',   '#FFFF00'],
+    \ ['red',     '#FF0000'],
+    \ ['darkgreen',    '#00FF00'],
+    \ ['White',         '#c0c0c0'],
+    \ ['blue',       '#FF6000'],
+    \ ['cyan', '#00FFFF'],
+    \ ['darkmagenta',    '#CC00FF'],
+    \ ['yellow',   '#FFFF00'],
+    \ ['red',     '#FF0000'],
+    \ ['darkgreen',    '#00FF00'],
+    \ ['White',         '#c0c0c0'],
+    \ ]
+
+" Update this with the amount of supported colors
+"let g:rbpt_max = 21
+let g:rbpt_max = 21
+
+" Turn rainbow parenthesis script on
+au VimEnter * RainbowParenthesesToggle
+" These are necessary to re-load the stuff when syntax changes.
+au Syntax * RainbowParenthesesLoadRound
+" I don't anything but ( and ) colored, so don't bother loading these
+"au Syntax * RainbowParenthesesLoadSquare
+"au Syntax * RainbowParenthesesLoadBraces

@@ -49,3 +49,6 @@
 [submodule "bin/tmux-mem-cup-load"]
 	path = bin/tmux-mem-cup-load
 	url = https://github.com/thewtex/tmux-mem-cpu-load.git
+[submodule ".vim/bundle/vim-colors-solarized"]
+	path = .vim/bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git

@@ -18,5 +18,6 @@
     sr =!git branch --set-upstream `git rev-parse --abbrev-ref HEAD` origin/`git rev-parse --abbrev-ref HEAD`
     nuke = !sh -c 'git branch -d $1 && git push origin :$1' -
     fnuke = !sh -c 'git branch -D $1 && git push origin :$1' -
+    pr = pull --rebase
 [core]
 	editor = vim
