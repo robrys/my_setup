@@ -55,3 +55,6 @@
 [submodule ".vim/bundle/vim-airline"]
 	path = .vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline.git
+[submodule "tmux-powerline"]
+	path = bin/tmux-powerline
+	url = https://github.com/erikw/tmux-powerline.git
