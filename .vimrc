@@ -8,11 +8,8 @@ set t_Co=256
 set encoding=utf-8
 
 " OMG it's powerline!
-"let g:Powerline_symbols = 'fancy'
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_symbols.space = "\ua0"
+let g:airline_powerline_fonts = 1
+let g:airline_enable_branch = 1
 let g:airline_theme = 'powerlineish'
 
 " Make sure I can spell
