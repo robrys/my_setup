@@ -7,64 +7,14 @@ set t_Co=256
 " utf-8 encoding baby!
 set encoding=utf-8
 
-" OMG it's powerline!
-let g:airline_powerline_fonts = 1
-let g:airline_enable_branch = 1
-let g:airline_theme = 'powerlineish'
-
 " Make sure I can spell
 " set spell spelllang=en_us
-
-" Go hard or go home
-" autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 " Bye, bye arrow keys
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
-
-" Check that syntax
-execute pathogen#infect()
-" Syntastic on by default
-let g:syntastic_mode_map = { 'mode': 'active',
-    \ 'active_filetypes': [],
-    \ 'passive_filetypes': [] }
-
-" Check it on startup
-let g:syntastic_check_on_open = 1
-" Don't check syntax when you quit fool
-let g:syntastic_check_on_wq = 0
-" Got them pretty symbols
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '⚠'
-
-" Checkers
-let g:syntastic_python_checkers=['pyflakes']
-let g:syntastic_json_checkers=['jsonlint']
-
-" NERDtree things
-nmap <C-l> :NERDTreeToggle<CR>
-
-"Ctrl-p Stuff
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip   " MacOSX/Linux
-" set wildignore+=tmp\*,*.swp,*.zip,*.exe    " Windows
-:helptags ~/.vim/bundle/ctrlp.vim/doc
-let g:ctrlp_working_path_mode = 2          " CtrlP: use the nearest ancestor that contains one of these directories or files: .git/ .hg/ .svn/ .bzr/ _darcs/
-let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|node_modules',
-    \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\|\.DS_Store',
-    \ 'link': 'some_bad_symbolic_links',
-    \ }
-let g:ctrlp_extensions = [
-   \ 'ctrlp-filetpe',
-   \ ]
-let g:ctrlp_follow_symlinks = 1
-let g:ctrlp_match_window_bottom = 0
-let g:ctrlp_match_window_reversed = 0
-nmap ; :CtrlPBuffer<CR>
-nnoremap <leader>. :CtrlPTag<cr>
 
 " Syntax Highlighting
 syntax on
@@ -85,29 +35,6 @@ set ruler
 " Cool tab completion stuff
 set wildmenu
 set wildmode=list:longest,full
-
-function! Smart_TabComplete()
-  let line = getline('.')                         " current line
-
-  let substr = strpart(line, -1, col('.')+1)      " from the start of the current
-                                                  " line to one character right
-                                                  " of the cursor
-  let substr = matchstr(substr, "[^ \t]*$")       " word till cursor
-  if (strlen(substr)==0)                          " nothing to match on empty string
-    return "\<tab>"
-  endif
-  let has_period = match(substr, '\.') != -1      " position of period, if any
-  let has_slash = match(substr, '\/') != -1       " position of slash, if any
-  if (!has_period && !has_slash)
-    return "\<C-X>\<C-P>"                         " existing text matching
-  elseif ( has_slash )
-    return "\<C-X>\<C-F>"                         " file matching
-  else
-    return "\<C-X>\<C-O>"                         " plugin matching
-  endif
-endfunction
-
-"inoremap <tab> <c-r>=Smart_TabComplete()<CR>
 
 " Enable mouse support in console (Has issues with git)
 "set mouse=a
@@ -159,6 +86,81 @@ set colorcolumn=100
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "match OverLength /\%81v.\+/
 
+" Vundle Setup
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'sjl/gundo.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'chilicuil/conque'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'bling/vim-airline'
+Plugin 'fatih/vim-go'
+Plugin 'majutsushi/tagbar'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" OMG it's powerline!
+let g:airline_powerline_fonts = 1
+let g:airline_enable_branch = 1
+let g:airline_theme = 'powerlineish'
+
+" Syntastic on by default
+let g:syntastic_mode_map = { 'mode': 'active',
+    \ 'active_filetypes': [],
+    \ 'passive_filetypes': [] }
+
+" Check it on startup
+let g:syntastic_check_on_open = 1
+" Don't check syntax when you quit fool
+let g:syntastic_check_on_wq = 0
+" Got them pretty symbols
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
+
+" Checkers
+let g:syntastic_python_checkers=['pyflakes']
+let g:syntastic_json_checkers=['jsonlint']
+
+" NERDtree things
+nmap <C-l> :NERDTreeToggle<CR>
+
+"Ctrl-p Stuff
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip   " MacOSX/Linux
+" set wildignore+=tmp\*,*.swp,*.zip,*.exe    " Windows
+:helptags ~/.vim/bundle/ctrlp.vim/doc
+let g:ctrlp_working_path_mode = 2          " CtrlP: use the nearest ancestor that contains one of these directories or files: .git/ .hg/ .svn/ .bzr/ _darcs/
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|node_modules',
+    \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\|\.DS_Store',
+    \ 'link': 'some_bad_symbolic_links',
+    \ }
+let g:ctrlp_extensions = [
+   \ 'ctrlp-filetpe',
+   \ ]
+let g:ctrlp_follow_symlinks = 1
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_match_window_reversed = 0
+nmap ; :CtrlPBuffer<CR>
+nnoremap <leader>. :CtrlPTag<cr>
+
 " Rainbow parentheses colors.
 " Left column is for terminal environment.
 " Right column is for GUI environment.
@@ -195,6 +197,3 @@ let g:rbpt_max = 21
 au VimEnter * RainbowParenthesesToggle
 " These are necessary to re-load the stuff when syntax changes.
 au Syntax * RainbowParenthesesLoadRound
-" I don't anything but ( and ) colored, so don't bother loading these
-"au Syntax * RainbowParenthesesLoadSquare
-"au Syntax * RainbowParenthesesLoadBraces
