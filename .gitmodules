@@ -13,6 +13,3 @@
 [submodule "bin/tmux-mem-cup-load"]
 	path = bin/tmux-mem-cup-load
 	url = https://github.com/thewtex/tmux-mem-cpu-load.git
-[submodule ".vim/bundle/Vundle.vim"]
-	path = .vim/bundle/Vundle.vim
-	url = https://github.com/gmarik/Vundle.vim.git

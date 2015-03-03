@@ -118,7 +118,6 @@ filetype plugin indent on    " required
 
 " OMG it's powerline!
 let g:airline_powerline_fonts = 1
-let g:airline_enable_branch = 1
 let g:airline_theme = 'powerlineish'
 
 " Syntastic on by default

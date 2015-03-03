@@ -23,7 +23,8 @@ if [ "$UNAME" == "darwin" ]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
     # Install Command Line Tools
-    xcode-select --install
+    # NOTE: Assume alreaady installed
+    #xcode-select --install
 
     # Install node and other modules
     brew install node
@@ -33,6 +34,9 @@ else
     sudo yum install cmake make gcc gcc-c++ nodejs redis
     sudo npm install forever -g
 fi
+
+# Add Vundle
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # Install oh-my-zsh
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
