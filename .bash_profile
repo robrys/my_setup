@@ -42,11 +42,11 @@ lowercase(){
 }
 
 # Detect OS
-OS=`lowercase \`uname\``
-if [ "$OS" = "darwin" ]; then
-    OS="linx"
-else
+UNAME=$(uname | tr "[:upper:]" "[:lower:]")
+if [ "$UNAME" == "darwin" ]; then
     OS="mac"
+else
+    OS="linux"
 fi
 
 #ALIASES
