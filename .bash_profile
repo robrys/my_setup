@@ -36,6 +36,48 @@ function fawk {
     eval $cmd
 }
 
+# Ghetto Code Review function
+function gcr() {
+    local context=20
+    local opts=""
+    if [ "$1" == "-c" ]; then
+        opts="--cached"
+        shift
+    fi
+    if [ -n "$1" ]; then
+        context=$1
+    fi
+    git diff $opts -w -U$1 | htmldiff | pastie
+}
+
+# Environment ssh
+function sshe() {
+    if [ $# -lt 2 ]; then
+        echo "Usage: ${FUNCNAME[0]} APP ENV [NUMBER]"
+        return 1
+    fi
+    local num="01"
+    local app="$1"
+    local env="$2"
+    if [[ $env =~ ^[0-9]+$ ]]; then
+        env="test$env"
+    fi
+    if [ -n "$3" ]; then
+        num="$3"
+    fi
+
+    local app_alias=`cut -f2 -d' ' ~/app_aliases | grep "^$app$"`
+    if [ -n "$app_alias" ]; then
+        app=`grep " $app_alias$" ~/app_aliases | cut -f1 -d' '`
+    fi
+
+    local hostname="$num-$app-$env.envnxs.net"
+    local cmd="ssh -q -A -oStrictHostKeyChecking=no $hostname"
+    echo $cmd
+    eval $cmd
+}
+
+
 # Make things lowercase
 lowercase(){
     echo "$1" | sed "y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/"
@@ -63,6 +105,8 @@ if [ "$OS" = "linux" ]; then
     alias co='sh $HOME/bin/rmate'
     alias gitInfo='ssh git@git.corp.appnexus.com info'
     alias adnxs='cd /usr/local/adnxs'
+    alias apps='cd /usr/local/adnxs/apps'
+    alias configs='cd /usr/local/adnxs/configs'
     alias maestroui='cd /usr/local/adnxs/maestro3-ui'
     alias maestroapi='cd /usr/local/adnxs/maestro3-api'
     alias tasker='cd /usr/local/adnxs/tasker-api'
