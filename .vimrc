@@ -18,10 +18,10 @@ noremap <Right> <NOP>
 
 " Syntax Highlighting
 syntax on
-if has('gui_running')
-    set background=dark
-    colorscheme solarized
-endif
+let g:rehash256 = 1
+set background=dark
+colorscheme molokai
+"let g:molokai_original = 1
 
 " Easy viewing of multiple files? Why not!
 set hidden
@@ -111,6 +111,11 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 Plugin 'fatih/vim-go'
 Plugin 'majutsushi/tagbar'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'tomasr/molokai'
+Plugin 'elzr/vim-json'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'airblade/vim-gitgutter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -196,3 +201,18 @@ let g:rbpt_max = 21
 au VimEnter * RainbowParenthesesToggle
 " These are necessary to re-load the stuff when syntax changes.
 au Syntax * RainbowParenthesesLoadRound
+
+"vim-indent-guides
+let g:indent_guides_start_level = 2
+let g:indent_guides_guid_size = 1
+
+"vim-tmux-navigator
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> {Left-mapping} :TmuxNavigateLeft<cr>
+nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
+nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
+nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
+nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
+
+let g:tmux_navigator_save_on_switch = 1

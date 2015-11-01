@@ -4,7 +4,13 @@
 git submodule update --init --recursive
 
 # Move all files into home directory and load new bash profile
-cp -r .* $HOME/
+cp .bash_profile $HOME/
+cp .gitmodules $HOME/
+cp .gitconfig $HOME/
+cp .tmux.conf $HOME/
+cp .vimrc $HOME/
+cp .zshrc $HOME/
+cp -r .vim $HOME/
 cp -r bin $HOME/bin
 
 
@@ -32,7 +38,7 @@ if [ "$UNAME" == "darwin" ]; then
 # Linux
 else
     sudo yum install cmake make gcc gcc-c++ nodejs redis
-    sudo npm install forever -g
+    sudo npm install forever express -g
 fi
 
 # Add Vundle
@@ -46,3 +52,4 @@ cd $HOME/bin/tmux-mem-cpu-load
 cmake .
 make
 sudo make install
+echo "Run :PluginInstall in vim to complete Vundle Installation"
