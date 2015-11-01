@@ -47,7 +47,7 @@ function gcr() {
     if [ -n "$1" ]; then
         context=$1
     fi
-    git diff $opts -w -U$1 | htmldiff | pastie
+    git diff $opts -w -U$1 | pygmentize -l diff -O full=true -f html | python2.7 $HOME/bin/pastie/pastie.py
 }
 
 # Environment ssh
@@ -77,6 +77,14 @@ function sshe() {
     eval $cmd
 }
 
+fixssh() {
+  for key in SSH_AUTH_SOCK SSH_CONNECTION SSH_CLIENT; do
+    if (tmux show-environment | grep "^${key}" > /dev/null); then
+      value=`tmux show-environment | grep "^${key}" | sed -e "s/^[A-Z_]*=//"`
+      export ${key}="${value}"
+    fi
+  done
+}
 
 # Make things lowercase
 lowercase(){
@@ -84,11 +92,11 @@ lowercase(){
 }
 
 # Detect OS
-UNAME=$(uname | tr "[:upper:]" "[:lower:]")
-if [ "$UNAME" == "darwin" ]; then
-    OS="mac"
+OS=`lowercase \`uname\``
+if [ "$OS" = "darwin" ]; then
+    OS="linx"
 else
-    OS="linux"
+    OS="mac"
 fi
 
 #ALIASES
@@ -105,8 +113,6 @@ if [ "$OS" = "linux" ]; then
     alias co='sh $HOME/bin/rmate'
     alias gitInfo='ssh git@git.corp.appnexus.com info'
     alias adnxs='cd /usr/local/adnxs'
-    alias apps='cd /usr/local/adnxs/apps'
-    alias configs='cd /usr/local/adnxs/configs'
     alias maestroui='cd /usr/local/adnxs/maestro3-ui'
     alias maestroapi='cd /usr/local/adnxs/maestro3-api'
     alias tasker='cd /usr/local/adnxs/tasker-api'
@@ -169,4 +175,14 @@ if [ $OS = "linux" ]; then
     export GIT_PS1_SHOWUNTRACKEDFILES=true
     export GIT_PS1_SHOWUPSTREAM="verbose"
     export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]$(__git_ps1 "\[\033[01;33m\](%s)\[\033[00m\]")$ '
+fi
+
+# Startup actions
+if [ $OS = "linux" ]; then
+    . ~/.ssh/saveagent
+    #if tmux has -t "work4life"; then
+    #    exec tmux attach -t "work4life"
+    #elif [ -n "${LC_tmux_session+1}" ] && tmux has; then
+    #    exec tmux attach
+    #fi
 fi
