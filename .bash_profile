@@ -92,11 +92,11 @@ lowercase(){
 }
 
 # Detect OS
-OS=`lowercase \`uname\``
-if [ "$OS" = "darwin" ]; then
-    OS="linx"
-else
+UNAME=$(uname | tr "[:upper:]" "[:lower:]")
+if [ "$UNAME" = "darwin" ]; then
     OS="mac"
+else
+    OS="linux"
 fi
 
 #ALIASES
@@ -118,6 +118,9 @@ if [ "$OS" = "linux" ]; then
     alias tasker='cd /usr/local/adnxs/tasker-api'
     alias eos_rm='eos ps | grep $USER | awk '"'"'{ print $1 }'"'"' | while read inst ;  do eos kill -i $inst && eos rmc -i $inst; done'
     alias refresh='eval `ssh-agent`; ssh-add'
+    alias htmldiff='pygmentize -l diff -O full=true -f html'
+    alias ssh_refresh='. $HOME/.ssh/latestagent'
+    alias frelease='autoenv list -f | grep test | awk '"'"'{ print $1 }'"'"' | xargs -L1 autoenv release'
 fi
 
 # Activate z command
@@ -158,7 +161,7 @@ HISTSIZE=10000
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock
+#export SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock
 
 # Load bashrc if it exists
 if [ -f $HOME/.bashrc ]; then
