@@ -4,16 +4,20 @@
 git submodule update --init --recursive
 
 # Move all files into home directory and load new bash profile
-cp saveagent $HOME/.ssh/saveagent
+cp .ssh_saveagent $HOME/.ssh/saveagent
+cp .ssh_config $HOME/.ssh/config
 cp .bash_profile $HOME/
+cp .zshrc $HOME/
 cp .gitmodules $HOME/
 cp .gitconfig $HOME/
 cp -r bin $HOME/bin
 
+mkdir -p $HOME/.config/nvim
+cp flake8 $HOME/.config/flake8
+cp init.vim $HOME/.config/nvim/init.vim
+
 # Re-evaluating
 #cp .tmux.conf $HOME/
-#cp .vimrc $HOME/
-#cp .zshrc $HOME/
 #cp -r .vim $HOME/
 
 
@@ -45,17 +49,25 @@ elif [ -f $CENTOS_FILE ]; then
     sudo yum install cmake make gcc gcc-c++ nodejs redis
 # Ubuntu Linux
 elif [ -f $UBUNTU_FILE ]; then
-    sudo apt-get update; sudo apt-get -y install cmake make gcc nodejs
+    sudo apt-get update; sudo apt-get -y install cmake make gcc nodejs python-setuptools python-dev build-essentials tig flake8 appnexus-maestro-tools
+    sudo easy_install pip; sudo pip install --upgrade virtualenv; sudo pip install neovim
 fi
 
 # NPM Installation
 sudo npm install forever express -g
 
-# Add Vundle
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
 # Install oh-my-zsh
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+
+# Build neovim from source
+git clone https://github.com/neovim/neovim.git
+cd neovim
+rm -r build
+make clean
+make CMAKE_BUILD_TYPE=Release
+sudo make install
+
+# Build tmux
 
 # Installing tmux mem cpu plugin
 if [ "$UNAME" == "darwin" ]; then

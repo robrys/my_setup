@@ -1,0 +1,12 @@
+[flake8]
+exclude = .git,*.pyc
+
+select =
+    E,F,W,C,
+    Q000,
+    I
+
+ignore = E266, W29
+
+max-line-length = 100
+import-order-style = smarkets
