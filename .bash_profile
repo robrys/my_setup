@@ -114,6 +114,8 @@ if [ "$OS" = "linux" ]; then
     alias co='sh $HOME/bin/rmate'
     alias gitInfo='ssh git@git.corp.appnexus.com info'
     alias adnxs='cd /usr/local/adnxs'
+    alias apps='cd /usr/local/adnxs/apps'
+    alias configs='cd /usr/local/adnxs/configs'
     alias maestroui='cd /usr/local/adnxs/maestro3-ui'
     alias maestroapi='cd /usr/local/adnxs/maestro3-api'
     alias tasker='cd /usr/local/adnxs/tasker-api'
@@ -130,7 +132,9 @@ fi
 # Exposing editor for things
 export EDITOR='vim'
 if [ $OS = "linux" ]; then
-    alias vi="vim"
+    alias vim="nvim"
+    alias vi="nvim"
+    alias oldvim="vim"
 fi
 
 # Setting PATH for Python 2.7 AND Ruby
