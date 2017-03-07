@@ -79,6 +79,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'Yggdroot/indentLine'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'tamelion/neovim-molokai'
+Plug 'zchee/deoplete-jedi'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
