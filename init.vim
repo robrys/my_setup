@@ -80,6 +80,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'tamelion/neovim-molokai'
 
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
 
 " On-demand plugins
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -113,8 +115,8 @@ let g:airline_theme = 'luna'
 " Neomake Settings
 "let g:neomake_python_flake8_maker = { 'exe': '/usr/local/bin/flake8' }
 let g:neomake_python_enabled_makers = ['flake8']
-let g:neomake_python_flake8_maker = { 'args': ['--ignore=E501'], }
-let g:neomake_open_list = 2
+let g:neomake_python_flake8_maker = { 'args': ['--ignore=E501,E402'], }
+"let g:neomake_open_list = 2
 autocmd BufWritePost,BufEnter * Neomake  " run NeoMake on save
 
 " Nerdtree Settings
@@ -122,3 +124,6 @@ nmap <C-l> :NERDTreeToggle<CR>
 
 let g:molokai_original = 1
 let g:rehash256 = 1
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1

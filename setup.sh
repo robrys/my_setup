@@ -49,8 +49,8 @@ elif [ -f $CENTOS_FILE ]; then
     sudo yum install cmake make gcc gcc-c++ nodejs redis
 # Ubuntu Linux
 elif [ -f $UBUNTU_FILE ]; then
-    sudo apt-get update; sudo apt-get -y install cmake make gcc nodejs python-setuptools python-dev build-essentials tig flake8 appnexus-maestro-tools
-    sudo easy_install pip; sudo pip install --upgrade virtualenv; sudo pip install neovim
+    sudo apt-get update; sudo apt-get -y install cmake make gcc nodejs python-setuptools python-dev build-essentials tig flake8 appnexus-maestro-tools python3-pip
+    sudo easy_install pip; sudo pip install --upgrade virtualenv; sudo pip install neovim; sudo pip3 install neovim
 fi
 
 # NPM Installation
