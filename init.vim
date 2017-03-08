@@ -8,6 +8,7 @@ cmap w!! w !sudo tee > /dev/null %
 
 " Never hit escape again!
 imap jk <Esc>:w<CR>
+imap jj <Esc>
 
 " Bye, bye arrow keys
 noremap <Up> <NOP>
@@ -108,10 +109,11 @@ nnoremap <leader>. :CtrlPTag<cr>
 
 " Airline Settings
 let g:airline_powerline_fonts = 1
+let g:airline_theme = 'luna'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_theme = 'luna'
 
 " Neomake Settings
 "let g:neomake_python_flake8_maker = { 'exe': '/usr/local/bin/flake8' }
@@ -121,7 +123,7 @@ let g:neomake_python_flake8_maker = { 'args': ['--ignore=E501,E402'], }
 autocmd BufWritePost,BufEnter * Neomake  " run NeoMake on save
 
 " Nerdtree Settings
-nmap <C-l> :NERDTreeToggle<CR>
+nmap <C-L> :NERDTreeToggle<CR>
 
 let g:molokai_original = 1
 let g:rehash256 = 1
