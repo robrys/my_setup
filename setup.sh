@@ -41,6 +41,9 @@ if [ "$UNAME" == "darwin" ]; then
     # NOTE: Assume alreaady installed
     #xcode-select --install
 
+    # Install pkgs
+    brew install neovim tmux
+
     # Install node and other modules
     brew install node
     npm install forever express -g
