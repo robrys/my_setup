@@ -86,17 +86,18 @@ fixssh() {
   done
 }
 
+
 # Make things lowercase
 lowercase(){
     echo "$1" | sed "y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/"
 }
 
 # Detect OS
-OS=`lowercase \`uname\``
-if [ "$OS" = "darwin" ]; then
-    OS="linx"
-else
+UNAME=$(uname | tr "[:upper:]" "[:lower:]")
+if [ "$UNAME" = "darwin" ]; then
     OS="mac"
+else
+    OS="linux"
 fi
 
 #ALIASES
@@ -113,11 +114,16 @@ if [ "$OS" = "linux" ]; then
     alias co='sh $HOME/bin/rmate'
     alias gitInfo='ssh git@git.corp.appnexus.com info'
     alias adnxs='cd /usr/local/adnxs'
+    alias apps='cd /usr/local/adnxs/apps'
+    alias configs='cd /usr/local/adnxs/configs'
     alias maestroui='cd /usr/local/adnxs/maestro3-ui'
     alias maestroapi='cd /usr/local/adnxs/maestro3-api'
     alias tasker='cd /usr/local/adnxs/tasker-api'
     alias eos_rm='eos ps | grep $USER | awk '"'"'{ print $1 }'"'"' | while read inst ;  do eos kill -i $inst && eos rmc -i $inst; done'
     alias refresh='eval `ssh-agent`; ssh-add'
+    alias htmldiff='pygmentize -l diff -O full=true -f html'
+    alias ssh_refresh='. $HOME/.ssh/latestagent'
+    alias frelease='autoenv list -f | grep test | awk '"'"'{ print $1 }'"'"' | xargs -L1 autoenv release'
 fi
 
 # Activate z command
@@ -126,7 +132,9 @@ fi
 # Exposing editor for things
 export EDITOR='vim'
 if [ $OS = "linux" ]; then
-    alias vi="vim"
+    alias vim="nvim"
+    alias vi="nvim"
+    alias oldvim="vim"
 fi
 
 # Setting PATH for Python 2.7 AND Ruby
@@ -158,7 +166,7 @@ HISTSIZE=10000
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock
+#export SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock
 
 # Load bashrc if it exists
 if [ -f $HOME/.bashrc ]; then
@@ -174,7 +182,7 @@ if [ $OS = "linux" ]; then
     export GIT_PS1_SHOWDIRTYSTATE=true
     export GIT_PS1_SHOWUNTRACKEDFILES=true
     export GIT_PS1_SHOWUPSTREAM="verbose"
-    export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]$(__git_ps1 "\[\033[01;33m\](%s)\[\033[00m\]")$ '
+    export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]$(__git_ps1 "\[\033[01;33m\](%s)\[\033[00m\]")[\D{%F %T}]\n$ '
 fi
 
 # Startup actions

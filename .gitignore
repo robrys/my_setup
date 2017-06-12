@@ -1,0 +1,5 @@
+*.swp
+libevent*
+ncurses*
+tmux*
+neovim*
